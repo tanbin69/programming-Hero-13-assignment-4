@@ -43,3 +43,17 @@ const interviewStat = document.getElementById("stat-interview");
 const rejectStat = document.getElementById("stat-reject");
 totalStat.innerHTML = allContainer.children.length;
 switchTab(currentTab)
+
+document.getElementById("jobs-container").addEventListener("click",function(event){
+    const clickedElement = event.target;
+    const card = clickedElement.closest(".card");
+    if(clickedElement.classList.contains("interview")){
+       interviewContainer.appendChild(card);
+    }
+     if(clickedElement.classList.contains("rejected")){
+        
+    }
+     if(clickedElement.classList.contains("delete")){
+        
+    }
+})
