@@ -19,5 +19,27 @@ function switchTab(tab){
             tabName.classList.add(...tabInactive);
         }
     }
+    const pages = [allContainer,interviewContainer,rejectedContainer];
+    for (const section of pages)
+    {
+        section.classList.add("hidden");
+    }
+    if(tab === "all")
+    {
+        allContainer.classList.remove("hidden");
+    }
+    else if(tab === "interview")
+    {
+        interviewContainer.classList.remove("hidden");
+    }
+    else
+    {
+        rejectedContainer.classList.remove("hidden");
+    }
 }
+// stat-update
+const totalStat = document.getElementById("stat-total");
+const interviewStat = document.getElementById("stat-interview");
+const rejectStat = document.getElementById("stat-reject");
+totalStat.innerHTML = allContainer.children.length;
 switchTab(currentTab)
